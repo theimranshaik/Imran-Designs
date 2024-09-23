@@ -1,0 +1,245 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imran Designs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma&display=swap">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Michroma', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory; /* Enable snap scroll */
+    }
+
+    section {
+      height: 100vh;
+      width: 100%;
+      scroll-snap-align: start; /* Ensure each section snaps in place */
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Section 1 */
+    .section-1 video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .section-1 .header {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      color: white;
+      font-size: 24px;
+    }
+
+    .section-1 .contact-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: transparent;
+      border: 2px solid white;
+      border-radius: 5px;
+      color: white;
+      padding: 8px 20px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.3s ease;
+    }
+
+    .section-1 .contact-button:hover {
+      background: white;
+      color: black;
+    }
+
+    .arrow {
+      position: absolute;
+      bottom: 80px;
+      color: white;
+      font-size: 30px;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    /* Section 2-6 */
+    .image-section {
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: relative;
+    }
+
+    .image-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.4); /* Black contrast layer */
+    }
+
+    .image-section img.overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 90%;
+      max-height: 90%;
+      z-index: 2; /* Above the black layer */
+    }
+
+    /* Section 7 */
+    .section-7 {
+      background-image: url('Sec6.jpg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .section-7::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.3); /* Black contrast layer */
+    }
+
+    .section-7 .animated-contact-button {
+      background-color: white;
+      color: black;
+      padding: 15px 40px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      animation: pulse 2s infinite;
+      position: relative;
+      z-index: 2;
+    }
+
+    .section-7 .address {
+      margin-top: 20px;
+      font-size: 14px;
+      color: white;
+      z-index: 2;
+      position: relative;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .up-arrow {
+      position: absolute;
+      bottom: 20px;
+      color: white;
+      font-size: 30px;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    /* Arrow icon styling */
+    .arrow::before, .up-arrow::before {
+      content: '↓';
+    }
+
+    .up-arrow::before {
+      content: '↑';
+    }
+
+    /* Hide scrollbars */
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Section 1 -->
+  <section class="section-1">
+    <video autoplay muted loop playsinline>
+      <source src="your-video-file.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="header">Imran Designs</div>
+    <button class="contact-button" onclick="window.open('https://wa.me/919014651031?text=Hi,%20Imran%20shaik,%20I%27m%20interested%20to%20get%20a%20new%20logo%20for%20my%20brand.', '_blank')">Contact</button>
+    <div class="arrow" onclick="scrollToSection(2);"></div>
+  </section>
+
+  <!-- Section 2-6 -->
+  <section class="image-section section-2" style="background-image: url('Sec1.jpg');">
+    <img src="Ovl1.jpg" alt="Overlay" class="overlay">
+    <div class="arrow" onclick="scrollToSection(3);"></div>
+  </section>
+
+  <section class="image-section section-3" style="background-image: url('Sec2.jpg');">
+    <img src="Ovl2.jpg" alt="Overlay" class="overlay">
+    <div class="arrow" onclick="scrollToSection(4);"></div>
+  </section>
+
+  <section class="image-section section-4" style="background-image: url('Sec3.jpg');">
+    <img src="Ovl3.jpg" alt="Overlay" class="overlay">
+    <div class="arrow" onclick="scrollToSection(5);"></div>
+  </section>
+
+  <section class="image-section section-5" style="background-image: url('Sec4.jpg');">
+    <img src="Ovl4.jpg" alt="Overlay" class="overlay">
+    <div class="arrow" onclick="scrollToSection(6);"></div>
+  </section>
+
+  <section class="image-section section-6" style="background-image: url('Sec5.jpg');">
+    <img src="Ovl5.jpg" alt="Overlay" class="overlay">
+    <div class="arrow" onclick="scrollToSection(7);"></div>
+  </section>
+
+  <!-- Section 7 -->
+    <section class="image-section section-7" style="background-image: url('Sec6.jpg');">
+    <button class="animated-contact-button" onclick="window.open('https://wa.me/919014651031?text=Hi,%20Imran%20shaik,%20I%27m%20interested%20to%20get%20a%20new%20logo%20for%20my%20brand.', '_blank')">Contact</button>
+    <div class="address">1/112, Proddatur road, JMD, 516434 </div>
+    <div class="up-arrow" onclick="scrollToSection(1);"></div>
+  </section>
+
+  <script>
+    // Function to handle smooth scrolling between sections
+    function scrollToSection(sectionNumber) {
+      document.querySelector('.section-' + sectionNumber).scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>
+
